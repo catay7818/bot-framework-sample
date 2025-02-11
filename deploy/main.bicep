@@ -7,9 +7,10 @@ param acrName string
 @description('The name of the app service.')
 param appServiceName string
 
-@description('The name of the docker image.')
-param dockerImage string
-
+@description('The name of the bot docker image.')
+param botDockerImage string
+@description('The name of the python docker image.')
+param pythonDockerImage string
 module acr 'acr.bicep' = {
   name: '${acrName}-acr'
   params: {
@@ -23,7 +24,8 @@ module appService 'app-service.bicep' = {
   params: {
     location: location
     appServiceName: appServiceName
-    dockerImage: dockerImage
+    botDockerImage: botDockerImage
+    pythonDockerImage: pythonDockerImage
   }
 }
 

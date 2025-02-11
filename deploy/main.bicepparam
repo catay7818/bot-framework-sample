@@ -4,5 +4,5 @@ param acrName = 'cataybotacr'
 
 param appServiceName = 'catay-app-service'
 
-param dockerImage = 'cataybotacr.azurecr.io/bot:latest'
-// param dockerImage = 'cataybotacr.azurecr.io/python:latest'
+param botDockerImage = 'cataybotacr.azurecr.io/bot:latest'
+param pythonDockerImage = 'cataybotacr.azurecr.io/python:latest'
