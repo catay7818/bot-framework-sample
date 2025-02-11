@@ -12,5 +12,4 @@ namespace Microsoft.BotBuilderSamples.Controllers
             return "Hello from the API";
         }
     }
-    S
 }
