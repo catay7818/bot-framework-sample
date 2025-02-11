@@ -1,6 +1,7 @@
 from typing import Union
 
-from fastapi import FastAPI
+from fastapi import Body, FastAPI
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -13,3 +14,12 @@ def read_root():
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
+
+
+class Echo(BaseModel):
+    text: str
+
+
+@app.post("/echo")
+def echo_message(text: str = Body(...)):
+    return f"Echo from python: {text}"
